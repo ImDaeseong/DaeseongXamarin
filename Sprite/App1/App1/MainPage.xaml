@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+
+    <StackLayout>
+
+        <StackLayout x:Name="canvas" HeightRequest="100" WidthRequest="100" BackgroundColor="Pink" >
+            <Image x:Name="changeimg" Aspect="AspectFit" />
+        </StackLayout>
+
+        <StackLayout x:Name="canvas1" HeightRequest="300" WidthRequest="300" BackgroundColor="Pink">
+            <Image x:Name="HeartImage" VerticalOptions="CenterAndExpand" Source="Heart.png" Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>                
+        </StackLayout>
+
+        <StackLayout x:Name="canvas2" HeightRequest="100" WidthRequest="100" BackgroundColor="Pink">
+            <Image  x:Name="MainImage" Source="mainico.png" HeightRequest="40" WidthRequest="40" VerticalOptions="CenterAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                </Image.GestureRecognizers>                    
+            </Image>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ScreenLock"
+             x:Class="ScreenLock.MainPage"
+             BackgroundColor="Transparent">
+
+   
+        <Image x:Name="playerImage" >
+            <Image.GestureRecognizers>
+                <PinchGestureRecognizer PinchUpdated="PinchUpdated_Event"/>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Image.GestureRecognizers>
+        </Image>
+  
+
+</ContentPage>

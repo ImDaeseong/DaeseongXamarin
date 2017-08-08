@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderers="clr-namespace:App1.Renderers"
+             x:Class="App1.Page2">
+    <ContentPage.Content>
+        <StackLayout>
+            <renderers:ExImage Source="book.png" LongPress="ExImage_LongPress" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

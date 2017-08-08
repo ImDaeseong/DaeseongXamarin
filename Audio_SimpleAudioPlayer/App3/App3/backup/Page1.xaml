@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Page1">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+
+    <StackLayout>
+        <Label Text="음악목록" TextColor="Orange" FontSize="Medium" HorizontalOptions="Center" />
+
+        <ListView HasUnevenRows="true" SeparatorVisibility="None" ItemsSource="{Binding MusicSource}" ItemSelected ="ListView_ItemSelected" ItemTapped="ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                            <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+           
+        <StackLayout Orientation="Horizontal" Padding="8">
+            <Label FontSize="Micro" Text="00:00" VerticalOptions="Center" x:Name="currentTime" />
+            <ProgressBar x:Name="progress" Progress="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+            <Label FontSize="Micro" Text="00:00" VerticalOptions="Center" x:Name="totalTime" />
+        </StackLayout>
+
+    
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="32" Margin="0,0,0,16">
+               
+            <Image WidthRequest="40" HeightRequest="40">
+                    <Image.Source>
+                    <FileImageSource File="bw.png" />
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_TappedPrePlayMusic" />
+                    </Image.GestureRecognizers>
+            </Image>
+            
+            <Image x:Name="playImage" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center">
+                    <Image.Source>
+                    <FileImageSource File="pp1.png" />
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_TappedPlay" />
+                    </Image.GestureRecognizers>
+            </Image>
+            
+            <Image WidthRequest="40" HeightRequest="40" HorizontalOptions="End">
+                    <Image.Source>
+                    <FileImageSource File="FW.png" />
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_TappedNextPlayMusic" />
+                    </Image.GestureRecognizers>
+            </Image>
+        
+        </StackLayout>
+    </StackLayout>
+        
+</ContentPage>

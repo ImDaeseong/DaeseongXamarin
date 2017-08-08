@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage"
+             Title="현재 상영 영화">
+
+    <ScrollView HorizontalOptions="StartAndExpand">
+        <StackLayout>
+            <ListView x:Name="listView" ItemsSource="{Binding Movies}" ItemTapped="ListViewItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                            ImageSource="{Binding ImageUrl}" 
+                            Text="{Binding Title}"  />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

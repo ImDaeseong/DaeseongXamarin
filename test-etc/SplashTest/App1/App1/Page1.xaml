@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderers="clr-namespace:App1.Renderers"
+             x:Class="App1.Page1"
+             BackgroundColor="#33A7D6">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+            <renderers:FloatingActionButton x:Name="floatBtn" Image="book.png"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="250" HeightRequest="250" Clicked ="Button_Clicked" />
+            <Label Text="앱을 시작합니다." TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontSize="16"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

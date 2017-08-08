@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.PicturePage"
+             BackgroundColor="Transparent">
+
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="Transparent">
+            <Button x:Name="btnTakePicture" Text="배경 사진을 찍습니다." Clicked="btnTakePicture_Clicked"/>
+            <Button x:Name="btnPickPicture" Text="배경 이미지를 선택합니다."  Clicked="btnPickPicture_Clicked"/>
+            <Button x:Name="btnCanelPickPicture" Text="선택된 배경 이미지를 취소합니다." Clicked="btnCanelPickPicture_Clicked"/>
+            <Image  x:Name="bgImage"  Source="musiclist.png"  VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+
+    </ContentPage.Content>
+    
+</ContentPage>

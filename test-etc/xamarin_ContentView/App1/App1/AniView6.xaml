@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.AniView6">
+  <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="aniImg" 
+               Source="ani2.png" WidthRequest="100" HeightRequest="100" 
+			   HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0"/>
+
+            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <Button CommandParameter="1" Clicked="Scale_Clicked" Text="x 1"/>
+                <Button CommandParameter="2" Clicked="Scale_Clicked" Text="x 2"/>
+                <Button CommandParameter="3" Clicked="Scale_Clicked" Text="x 3"/>
+                <Button CommandParameter="2" Clicked="ReScale_Clicked" Text="Re x 2"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

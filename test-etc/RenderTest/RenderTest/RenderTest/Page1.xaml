@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:RenderTest.Renderers"
+             xmlns:views="clr-namespace:RenderTest"
+             x:Class="RenderTest.Page1">
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical">
+            
+            <ScrollView x:Name="xMenu">
+                <StackLayout Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Text="Menu" Clicked="Menu_Clicked" Grid.Column="0"/>
+                        <Button Text="Menu" Clicked="Menu_Clicked" Grid.Column="1"/>
+                        <Button Text="Menu" Clicked="Menu_Clicked" Grid.Column="2"/>
+                        <Button Text="Menu" Clicked="Menu_Clicked" Grid.Column="3"/>
+                        <Button Text="Menu" Clicked="Menu_Clicked" Grid.Column="4"/>
+                    </Grid>                    
+                </StackLayout>                
+            </ScrollView>
+
+            <BoxView HeightRequest="0.5" BackgroundColor="PowderBlue" />
+
+            
+
+            <ScrollView x:Name="xScrollView" Orientation="Vertical">
+                <StackLayout>                    
+                    <controls:UnderlineLabel TextColor="Orange" Text="UnderlineLabel" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <controls:BorderedEntry  HasBorder="True" BorderColor="Black"   BorderHeight="2" BorderColorActive="Red" Margin="0, 5, 0, 5" BackgroundColor="Transparent" FontSize="18" TextColor="Pink" Placeholder="검색"/>
+                    <controls:RoundCornersButton Text="RoundCornersButton" BorderWidth ="2"  BorderColor ="Black" BackgroundColor="Pink" TextColor="Black" Margin="5, 5, 5, 5" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <controls:MultiLineLabel Lines="2" Text="MultiLineLabel 테스트 ScrollView 안에서 Orientation 옵션이 Horizontal 이면 멀티라인이 먹지 않는다."  Margin="20,0,20,0" LineBreakMode="TailTruncation" VerticalOptions="Center" HorizontalOptions="Center" />
+
+                    <StackLayout  Margin="20">
+                        <views:RoundContentView VerticalOptions="Center" HorizontalOptions="Center" />
+                    </StackLayout>
+                    
+                    <StackLayout  Margin="20">
+                        <controls:BlueEntry Placeholder="UserName" Keyboard="Chat" />
+                        <controls:BlueEntry Placeholder="Phone" Keyboard="Telephone" />
+                        <controls:BlueEntry Placeholder="Email" Keyboard="Email" />
+                        <controls:BlueEntry Placeholder="Password" IsPassword="true" />
+                    </StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

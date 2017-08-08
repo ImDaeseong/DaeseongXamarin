@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MusicAllPage"
+             xmlns:daeseong="clr-namespace:App1.DaeseongControl"
+             BackgroundColor="Transparent">
+
+    <StackLayout BackgroundColor="Transparent">
+        
+        <ListView x:Name="MusicAllList" IsVisible="False" ItemsSource="{Binding MusicAllList}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+
+                                <Image Source="musicicon.png" WidthRequest="15" HeightRequest="15" />
+                                <StackLayout  Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                                    <Label Text="{Binding DisplayName}" TextColor="AntiqueWhite" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout x:Name="actIndicatorStackLayout" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+            <Image x:Name="splash" Aspect="AspectFit" HorizontalOptions="Center" />
+            <ActivityIndicator x:Name="actIndicator" Color="Pink" IsRunning="True" />
+            <Label Text="Loading..." TextColor="PowderBlue" HorizontalTextAlignment="Center" FontSize="16"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" >
+            <Label FontSize="Micro" TextColor="AntiqueWhite" Text="00:00" VerticalOptions="Center" x:Name="currentTime" />
+            <ProgressBar x:Name="progress" Progress="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+            <Label FontSize="Micro" TextColor="AntiqueWhite" Text="00:00" VerticalOptions="Center" x:Name="totalTime" />
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="32" Margin="0,0,0,16">
+
+            <daeseong:ImageButton x:Name="PrePayImage" WidthRequest="40" HeightRequest="40" Source="bw.png" />
+            <daeseong:ImageButton x:Name="playImage" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" Source="pp1.png" />
+            <daeseong:ImageButton x:Name="nextplayImage" WidthRequest="40" HeightRequest="40" HorizontalOptions="End" Source="FW.png" />
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

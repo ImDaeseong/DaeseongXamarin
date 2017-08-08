@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3"
+             x:Class="App3.MainPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <Label Text="XamarinAudioManager Test" TextColor="Blue" FontSize="Large" HorizontalOptions="Center" />
+
+                <Frame x:Name="frame1" IsVisible="False">
+                    <StackLayout Orientation="Vertical">
+                        <Switch x:Name="Background_AudioManagerMusicOn" Toggled="Background_AudioManagerMusicOn_Toggled" />
+                        <Switch x:Name="EffectsAudioManagerEffectsOn" Toggled="EffectsAudioManagerEffectsOn_OnToggled" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame x:Name="frame2" IsVisible="False">
+                    <StackLayout Orientation="Vertical">
+                        <Slider x:Name="AudioManagerBackgroundMusicVolume" Minimum="0" Maximum="1" ValueChanged="AudioManagerBackgroundMusicVolume_OnValueChanged" />
+                        <Slider x:Name="AudioManagerEffectsVolume" Minimum="0" Maximum="1" ValueChanged="AudioManagerEffectsVolume_OnValueChanged" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame x:Name="frame3" IsVisible="False">
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="btn1" Text="Deactivate" FontSize="Small" IsEnabled="True" Clicked="btn1_Clicked" />
+                        <Button x:Name="btn2" Text="Reactivate" FontSize="Small" IsEnabled="True" Clicked= "btn2_Clicked" />
+                        <Button x:Name="btn3" Text="Restart" FontSize="Small" IsEnabled="True" Clicked="btn3_Clicked" IsVisible="False" />
+                        <Button x:Name="btn4" Text="Play" FontSize="Small" IsEnabled="True" Clicked="btn4_Clicked" />
+                        <Button x:Name="btn5" Text="PlaySound" FontSize="Small" IsEnabled="True" Clicked="btn5_Clicked" IsVisible="False"  />
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

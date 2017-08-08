@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:tabpages="clr-namespace:App1;assembly=App1"
+            x:Class="App1.MainPage">
+
+    <TabbedPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0, 0, 0, 0" />
+    </TabbedPage.Padding>
+
+    <TabbedPage.Children>        
+        <tabpages:MusicFolderPage Title="음악 폴더" Icon="musictab.png" />
+        <tabpages:MusicAllPage Title="전체 음악" Icon="musictab.png" />
+        <tabpages:AboutPage Title="소개" Icon="musictab.png" />
+        <tabpages:PicturePage Title="배경설정" Icon="musictab.png" />
+    </TabbedPage.Children>
+
+</TabbedPage>

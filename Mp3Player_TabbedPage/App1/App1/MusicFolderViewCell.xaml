@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MusicFolderViewCell">
+
+    <Grid>
+        <Image x:Name="FolderImage" Aspect="AspectFit"  Source="{Binding sImage}" />
+        <Label x:Name="FolderName" Text="{Binding sName}" TextColor="Pink" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </Grid>
+    
+</ViewCell>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.HeadLineView">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" Padding="0" BackgroundColor="#33A7D6">
+            <StackLayout HorizontalOptions="Start">
+                <local:AButton Text="Start" />
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+                <local:AButton Text="End" />
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.Page9"
+             BackgroundColor="#33A7D6">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primary">#3ec3d5</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Padding="40" Spacing="10">
+                
+                <Label x:Name="lblani" HorizontalOptions="CenterAndExpand" 
+                              Text="UiApp" 
+                              TextColor="White" 
+                              FontSize="40" />
+                
+                <local:ImageEntry TextColor="White" 
+                        PlaceholderColor="{StaticResource primary}" 
+                        Image="user"
+                        Placeholder="Name" 
+                        HorizontalOptions="FillAndExpand"/>
+                
+                <local:ImageEntry TextColor="White" 
+                        PlaceholderColor="{StaticResource primary}" 
+                        Image="user" 
+                        Placeholder="LastName" 
+                        HorizontalOptions="FillAndExpand"/>
+                
+                <local:ImageEntry TextColor="White"
+                        PlaceholderColor="{StaticResource primary}" 
+                        Image="user" 
+                        Placeholder="Emil" 
+                        HorizontalOptions="FillAndExpand"/>
+                
+                <local:ImageEntry TextColor="White"  
+                        PlaceholderColor="{StaticResource primary}"  
+                        Image="user" 
+                        Placeholder="Password" 
+                        HorizontalOptions="FillAndExpand"/>
+
+                <Button TextColor="White" 
+                         Text="Register"  
+                         BackgroundColor="{StaticResource primary}"
+                         HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"/>
+
+                <Label Text="I have an account" VerticalOptions="EndAndExpand"
+                        HorizontalOptions="Center" 
+                        TextColor="{StaticResource primary}"/>
+
+           
+                <Entry  Margin="20,40,20,0" HeightRequest="50" Placeholder="Email">
+                    <Entry.Effects>
+                        <local:BackgroundEntryEffect />
+                    </Entry.Effects>
+                </Entry>
+
+               
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

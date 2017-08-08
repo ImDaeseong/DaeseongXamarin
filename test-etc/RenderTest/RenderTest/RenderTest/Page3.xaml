@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:frameviews="clr-namespace:RenderTest.Frames"
+             xmlns:views="clr-namespace:RenderTest.ContentViews"
+             xmlns:grids ="clr-namespace:RenderTest.Grids"
+             x:Class="RenderTest.Page3">
+    <ContentPage.Content>
+
+        <StackLayout Margin="5,5,5,5" x:Name="sl">
+           
+            <StackLayout x:Name="tb1" Orientation="Horizontal" Padding="0,5,0,0" BackgroundColor="Gray">
+                <views:TitleBar x:Name="tbTitleBar" BackgroundColor="Gray" />
+            </StackLayout>            
+            
+            <frameviews:FrameView x:Name="f1">                 
+                <StackLayout Spacing="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Source="google"  HorizontalOptions="End" Grid.Column="0" Grid.Row="0" />
+                        <Image Source="google" HorizontalOptions="End" Grid.Column="0" Grid.Row="1" />
+                       
+                        <Entry Placeholder="외국어" Text="{Binding KataIndor}" Grid.Column="1" Grid.Row="0"/>
+                        <Entry Placeholder="한국어" Text="{Binding katakor}" Grid.Column="1" Grid.Row="1"/>
+
+                        <Button x:Name="Add" Text="+" Grid.Column="2" Grid.Row="0"  BackgroundColor="Transparent" BorderColor="Transparent" BorderWidth="0" Clicked="Add_Clicked" />
+                        <Button x:Name="Remove" Text="-" Grid.Column="2" Grid.Row="1"  BackgroundColor="Transparent" BorderColor="Transparent" BorderWidth="0" />
+                    </Grid>
+                </StackLayout>
+            </frameviews:FrameView>
+
+            <frameviews:FrameView x:Name="f2" BackgroundColor="Red">
+                <StackLayout Spacing="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Source="google"  HorizontalOptions="End" Grid.Column="0" Grid.Row="0" />
+                        <Image Source="google" HorizontalOptions="End" Grid.Column="0" Grid.Row="1" />
+
+                        <Entry Placeholder="외국어1" Text="{Binding KataIndor1}" Grid.Column="1" Grid.Row="0"/>
+                        <Entry Placeholder="한국어1" Text="{Binding katakor1}" Grid.Column="1" Grid.Row="1"/>
+
+                        <Button x:Name="Add1" Text="+" Grid.Column="2" Grid.Row="0"  BackgroundColor="Transparent" BorderColor="Transparent" BorderWidth="0" Clicked="Add1_Clicked" />
+                        <Button x:Name="Remove1" Text="-" Grid.Column="2" Grid.Row="1"  BackgroundColor="Transparent" BorderColor="Transparent" BorderWidth="0" />
+                    </Grid>
+                </StackLayout>
+            </frameviews:FrameView>
+
+            <views:Seperator x:Name="sSeperator" />
+
+          
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

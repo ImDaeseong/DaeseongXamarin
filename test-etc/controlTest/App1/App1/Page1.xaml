@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.Page1">
+
+    <ScrollView>
+        <StackLayout Padding="10">
+
+            <local:FramedLabel Text="Label1 Label Label Label Label Label Label Label Label Label1" />
+
+            <local:MyButton BackgroundColor="Red" />
+
+            
+            <local:Frame1 BackgroundColor="#33A7D6">
+                <StackLayout Spacing="0">
+                    <Label FontSize="15" FontAttributes="Bold" TextColor="White" Text="Label1 Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label1" Margin="5,0,5,0" />
+                </StackLayout>
+            </local:Frame1>
+
+            <local:Frame2 BackgroundColor="#33A7D6">
+                <StackLayout Spacing="0">
+                    <Label FontSize="15" FontAttributes="Bold" TextColor="White" Text="Label1 Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label1" Margin="5,5,5,5" />
+                    <Label FontSize="15" FontAttributes="Bold" TextColor="White" Text="Label2 Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label2" Margin="5,5,5,5" />
+                    <Label FontSize="15" FontAttributes="Bold" TextColor="White" Text="Label3 Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label3" Margin="5,5,5,5" />
+                    <Label FontSize="15" FontAttributes="Bold" TextColor="White" Text="Label4 Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label4" Margin="5,5,5,5" />
+                </StackLayout>
+            </local:Frame2>
+
+            <Frame OutlineColor="Purple" HasShadow="true" BackgroundColor="#33A7D6">
+                <Label FontSize="15" FontAttributes="Bold" TextColor="White" Text="Label1 Label Label Label Label Label Label Label Label1" Margin="5,0,5,0" />
+            </Frame>
+
+            <Frame OutlineColor="Silver" VerticalOptions="CenterAndExpand" BackgroundColor="#33A7D6">
+                <Label FontSize="15" FontAttributes="Bold" TextColor="White" Text="Label1 Label Label Label Label Label Label Label Label1" Margin="5,0,5,0" />
+            </Frame>
+
+            <Frame BackgroundColor="White" OutlineColor="White" Padding="5">
+                <Frame BackgroundColor="#33A7D6" OutlineColor="Green" HasShadow="False" Padding="0,0,5,0">
+                    <StackLayout VerticalOptions="CenterAndExpand" Padding="50">
+                        <Label Text="Label1 Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label1" HorizontalTextAlignment="Center" FontSize="15" FontAttributes="Bold" />
+                        <Label Text="Label1 Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label1" HorizontalTextAlignment="Center" FontSize="15" FontAttributes="Bold" />
+                        <Label Text="Label1 Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label1" HorizontalTextAlignment="Center" FontSize="15" FontAttributes="Bold" />
+                    </StackLayout>
+                </Frame>
+            </Frame>
+
+           
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

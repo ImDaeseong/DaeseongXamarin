@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:daeseong="clr-namespace:App3.DaeseongControl"
+             x:Class="App3.MusicList"
+             BackgroundColor="Transparent"
+             BackgroundImage="bg.jpg">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="Transparent">
+            <Label Text="음악목록" TextColor="Orange" FontSize="Medium" HorizontalOptions="Center" />
+            <ListView x:Name="MusicListview" HasUnevenRows="true" SeparatorVisibility="None" ItemsSource="{Binding MusicSource}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>                    
+                        <StackLayout  Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                            <Label Text="{Binding ViewName}" TextColor="AntiqueWhite" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout x:Name="LogoImageAni" IsVisible="False" Orientation="Horizontal" HorizontalOptions="Center" Padding="8">
+                <Image x:Name="LogoImage" HorizontalOptions="Center" VerticalOptions="Center"
+				Source="ani2.png" WidthRequest="150" HeightRequest="150"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <daeseong:Ticker x:Name="TickerLabel" VerticalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" >
+                <Label FontSize="Micro" TextColor="AntiqueWhite" Text="00:00" VerticalOptions="Center" x:Name="currentTime" />
+                <ProgressBar x:Name="progress" Progress="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                <Label FontSize="Micro" TextColor="AntiqueWhite" Text="00:00" VerticalOptions="Center" x:Name="totalTime" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="32" Margin="0,0,0,16">
+
+                <daeseong:ImageButton x:Name="PrePayImage" WidthRequest="40" HeightRequest="40" Source="bw.png" />
+                <daeseong:ImageButton x:Name="playImage" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" Source="pp1.png" />
+                <daeseong:ImageButton x:Name="nextplayImage" WidthRequest="40" HeightRequest="40" HorizontalOptions="End" Source="FW.png" />
+                
+            </StackLayout>
+           
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="5">
+                <Label FontSize="Micro" Text=""  TextColor="LightPink" VerticalOptions="Center" x:Name="currentMusicName" />                
+            </StackLayout>
+
+            <daeseong:TextTicker x:Name="MarqueeTicker" Padding="5" IsVisible="False"  />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

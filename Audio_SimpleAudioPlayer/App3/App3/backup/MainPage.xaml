@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3"
+             x:Class="App3.MainPage"
+             BackgroundColor="Transparent">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+              
+                <Frame x:Name="frame1" IsVisible="True">
+                    <StackLayout Orientation="Vertical">
+                        
+                        <Image x:Name="imgLeft" Source="bw.png" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped= "TapGestureRecognizer_TappedimgLeft"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image x:Name="imgRight" Source="FW.png" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped= "TapGestureRecognizer_TappedimgRight"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image x:Name="imgPlus" Source="plus.png" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped= "TapGestureRecognizer_TappedimgPlus"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image x:Name="imgMinus" Source="min.png" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped= "TapGestureRecognizer_TappedimgMinus"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image x:Name="imgPlay" Source="pp1.png" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped= "TapGestureRecognizer_TappedimgPlay"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image x:Name="imgClose" Source="close.png" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped= "TapGestureRecognizer_TappedimgClose"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Slider x:Name="sliderVolume" Minimum="0" Maximum="1" ValueChanged ="sliderVolume_ValueChanged" />
+
+                        <Slider x:Name="sliderPosition" />
+                        <Label x:Name="lblPosition" />
+
+                    </StackLayout>
+                </Frame>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

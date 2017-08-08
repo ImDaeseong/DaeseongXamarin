@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Page1"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Orientation="Vertical" BackgroundColor= "#445F7B"  Margin="0">
+                <Label x:Name="MyLocation" Text="위치" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Picker x:Name="AddressList" Title="검색할 주소를 선택하세요." />
+                
+                <StackLayout>
+                    <Frame x:Name="frame1" IsVisible="True">
+                       <maps:Map x:Name="map" IsShowingUser="true" MapType="Street" HeightRequest="350" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    </Frame>
+                    <Frame x:Name="frame2" IsVisible="False">
+                        <maps:Map x:Name="mapSearch" IsShowingUser="true" MapType="Street" HeightRequest="350" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    </Frame>
+                </StackLayout>
+               
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="32" Margin="0,0,0,16">
+                    <Button x:Name="searchMe" BorderRadius="30" BorderWidth="0" Text="현재위치" TextColor="White" BackgroundColor="#4099EC" Clicked="searchMe_Clicked" />
+                    <Button x:Name="searchAddress" BorderRadius="30" BorderWidth="0" Text="PC방검색" TextColor="White" BackgroundColor="#4099EC" Clicked="searchAddress_Clicked" />
+                </StackLayout>
+
+                <StackLayout Margin="0" Spacing="0" VerticalOptions="Center">
+                    <ActivityIndicator x:Name="actIndicator" HeightRequest="15" WidthRequest="15" HorizontalOptions="Fill" Color="Pink" IsRunning="False" IsVisible="False"/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

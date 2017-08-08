@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xamarians="clr-namespace:Xamarians.MediaPlayer;assembly=Xamarians.MediaPlayer"
+             xmlns:local="clr-namespace:App3"
+             x:Class="App3.MainPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"
+                    Android="0, 0, 0, 0"
+                    WinPhone="0, 0, 0, 0" />
+    </ContentPage.Padding>
+       
+    <ContentPage.Content>        
+        <xamarians:VideoPlayer x:Name="VideoPlayer"
+                               AutoPlay="False" 
+                               Source=""
+                               Error="VideoPlayer_Error" 
+                               Prepared="VideoPlayer_Prepared" 
+                               Completed="VideoPlayer_Completed">
+        </xamarians:VideoPlayer>
+    </ContentPage.Content>    
+
+</ContentPage>

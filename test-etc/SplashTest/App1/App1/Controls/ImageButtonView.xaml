@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Controls.ImageButtonView"
+             Padding="0">
+
+    <Grid x:Name="grdView" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="115" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name ="imgImage" Grid.Column="0" />
+        <Label x:Name="lblText"  Grid.Column="2"
+			   VerticalOptions="Center"
+			   HorizontalOptions="Start"
+			   HorizontalTextAlignment="Start"
+			   VerticalTextAlignment="Center"
+			   TextColor="Orange"
+			   FontAttributes="Bold"
+			   FontSize="15"
+			   Text="ImageButtonView" />
+    </Grid>
+    
+</ContentView>

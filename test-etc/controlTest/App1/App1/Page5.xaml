@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.Page5">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <local:CircleImage Source="icon.png" BorderColor="Red" BorderThickness="2" FillColor="Black" />
+            <local:CircleImage BorderColor="Red" BorderThickness="2" FillColor="Black" />
+            <local:CircleImage Source="icon.png"  />
+            <local:AButton Text="AButton" WidthRequest="200" HorizontalOptions="Center" Clicked="AButton_Clicked" />
+            <StackLayout x:Name="xAniButton" WidthRequest="200" HorizontalOptions="Center" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

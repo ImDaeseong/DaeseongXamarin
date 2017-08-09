@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Page2">
+    <ContentPage.Content>
+        <StackLayout x:Name="progressStack" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblProg" Text="Downloading : " TextColor="Blue" HorizontalTextAlignment="Start" FontSize="10" />
+                <ProgressBar x:Name="progress"  Progress="0" WidthRequest="200" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

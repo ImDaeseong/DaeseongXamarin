@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App1.Controls"
+             xmlns:renderers ="clr-namespace:App1.Renderers"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+  
+    <StackLayout Padding="10">
+
+        <renderers:CurvedCornersLabel Text="CurvedCornersLabel" FontSize="20" CurvedCornerRadius="6" CurvedBackgroundColor="Gray" />
+        <renderers:BorderEntry HeightRequest="40" />
+        <renderers:MyEntry />
+        <renderers:EditText />
+        <renderers:ButtonTextAlignment TextColor="#33A7D6" Text="ButtonTextAlignment" HeightRequest="20" WidthRequest="50" />
+        <renderers:BoxBorderEntry />
+
+        <renderers:LinkLabel Text="Close" TextColor="#E01722" Clicked="LinkLabel_Clicked" />
+
+        <controls:EmptyLabel />
+
+      
+        
+        <renderers:FancyFrame OnSwipe= "FancyFrame_OnSwipe">
+            <StackLayout VerticalOptions = "Fill" HorizontalOptions="Fill">
+                <Image HeightRequest="312" WidthRequest="397"  x:Name="cardimage" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </renderers:FancyFrame>
+
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,11 +1,13 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using CarouselView.FormsPlugin.Abstractions;
+using CarouselView.FormsPlugin.Android;
+
 
 namespace App1.Droid
 {
@@ -20,6 +22,9 @@ namespace App1.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            CarouselViewRenderer.Init();
+
             LoadApplication(new App());
         }
     }

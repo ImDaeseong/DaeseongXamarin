@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="App1.Page1">
+    <ContentPage.Content>
+
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <cv:CarouselViewControl x:Name="carView" ItemsSource="{Binding ImagesAllList}"
+				Orientation="Horizontal" InterPageSpacing="10" Position="0" HorizontalOptions="FillAndExpand">
+                <cv:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <StackLayout BackgroundColor="#80000000" Padding="12">
+                                <Label Text="{Binding DisplayName}" TextColor="Black" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </cv:CarouselViewControl.ItemTemplate>
+            </cv:CarouselViewControl>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

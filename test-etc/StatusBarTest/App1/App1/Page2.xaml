@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:local="clr-namespace:App1"           
+             x:Class="App1.Page2">
+
+    <!-- 뷰모델의 데이타 바인딩 설정 -->
+    <ContentPage.BindingContext>
+        <local:AnimalsViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".7*"/>
+            </Grid.RowDefinitions>
+
+            <cv:CarouselViewControl ItemsSource="{Binding Zoos}" x:Name="CarouselZoos">
+                <cv:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+                            <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                                <Label TextColor="White" Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </cv:CarouselViewControl.ItemTemplate>
+            </cv:CarouselViewControl>
+
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

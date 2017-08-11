@@ -12,29 +12,29 @@ namespace App1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
-        private List<ImgAllFile> imgAllList;
+        private List<TextItem> TextAllList;
 
         public Page1()
         {
             InitializeComponent();
 
-            imgAllList = null;
-            imgAllList = new List<ImgAllFile>();
+            TextAllList = null;
+            TextAllList = new List<TextItem>();
 
-            carView.ItemsSource = imgAllList;
+            carView.ItemsSource = TextAllList;
 
             for(int i=0; i<20; i++)
             {
-                imgAllList.Add(new ImgAllFile(string.Format("Text {0}", i+1)));
+                TextAllList.Add(new TextItem(string.Format("Text {0}", i+1)));
             }
         }
     }
     
-    class ImgAllFile
+    class TextItem
     {
         public string DisplayName { get; set; }
 
-        public ImgAllFile(string DisplayName)
+        public TextItem(string DisplayName)
         {
             this.DisplayName = DisplayName;
         }

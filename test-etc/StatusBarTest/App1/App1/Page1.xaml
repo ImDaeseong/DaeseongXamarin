@@ -10,7 +10,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <cv:CarouselViewControl x:Name="carView" ItemsSource="{Binding ImagesAllList}"
+            <cv:CarouselViewControl x:Name="carView" ItemsSource="{Binding TextAllList}"
 				Orientation="Horizontal" InterPageSpacing="10" Position="0" HorizontalOptions="FillAndExpand">
                 <cv:CarouselViewControl.ItemTemplate>
                     <DataTemplate>

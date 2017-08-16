@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local = "clr-namespace:App1"
+             x:Class="App1.Page1">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <local:GestureFrame x:Name="swipeFrame" 
+                                Margin="5,5,5,5"
+                                BackgroundColor= "Red" 
+                                VerticalOptions="FillAndExpand" 
+                                HorizontalOptions="FillAndExpand" 
+                                SwipeDown="swipeFrame_SwipeDown"
+                                SwipeTop="swipeFrame_SwipeTop"
+                                SwipeLeft="swipeFrame_SwipeLeft"
+                                SwipeRight="swipeFrame_SwipeRight" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

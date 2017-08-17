@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App1.Controls"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+    <ScrollView>
+        <StackLayout x:Name="sl">
+
+            <controls:CCircle>
+                <controls:CCircle.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </controls:CCircle.GestureRecognizers>
+            </controls:CCircle>
+
+            <controls:HorizontalScroll />
+
+            <Button x:Name="icon" Text="left"  Clicked="Button_Clicked" />
+
+            <Frame x:Name="frame1" BackgroundColor="Blue" HeightRequest="50" WidthRequest="50" />
+            <Frame x:Name="frame2" BackgroundColor="Red" HeightRequest="50" WidthRequest="50" />
+
+            <StackLayout x:Name="slidesl" BackgroundColor="Bisque">
+                <Label x:Name="lblText" Text="label test" TextColor="Red" HorizontalOptions="Center" />
+                <Button Text="1" Clicked="Button_Clicked_1" />
+                <Button Text="2" Clicked="Button_Clicked_2" />
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Yellow">
+                <Button x:Name="a1" Text="a1" Clicked="Button_Clicked_3" />
+                <Button x:Name="a2" Text="a2" Clicked="Button_Clicked_4" />
+            </StackLayout>
+
+            <StackLayout x:Name="tsl" BackgroundColor="Gray">
+                <Button x:Name="a3" Text="a3" Clicked="a3_Clicked" />
+                <Button x:Name="a4" Text="a4" Clicked="a4_Clicked" />
+            </StackLayout>
+            
+        </StackLayout>
+
+    </ScrollView>
+    
+</ContentPage>

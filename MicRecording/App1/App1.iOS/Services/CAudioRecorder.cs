@@ -1,26 +1,26 @@
 ﻿using System;
+using AVFoundation;
+using Foundation;
 using Xamarin.Forms;
 using App1.iOS.Services;
 using App1.Services;
-using AVFoundation;
-using Foundation;
-using System.IO;
 
-[assembly: Dependency(typeof(iOSAudioRecorder))]
+[assembly: Dependency(typeof(CAudioRecorder))]
 namespace App1.iOS.Services
-{
-    public class iOSAudioRecorder : AudioRecorder
+{   
+     public class CAudioRecorder : AudioRecorder
     {
         public AVAudioRecorder Recorder { get; set; }
         public NSError Error;
         public NSUrl Url { get; set; }
         public NSDictionary Settings { get; set; }
 
-        public iOSAudioRecorder()
+        public CAudioRecorder()
         {
-            AudioFilePath = Path.GetTempPath();
+            //AudioFilePath = Path.GetTempPath();
+            AudioFilePath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
         }
-        
+
         void AudioRecorder.StartRecord()
         {
             PrepareRecorder();
@@ -57,7 +57,7 @@ namespace App1.iOS.Services
                 audioFilePath = value;
             }
         }
-        
+
         public void PrepareRecorder()
         {
             if (Recorder != null)
@@ -76,7 +76,7 @@ namespace App1.iOS.Services
                 Console.WriteLine("audioSession: {0}", err);
             }
 
-            Console.WriteLine("Audio File Path: " + AudioFilePath + AudioFileName);
+            //Console.WriteLine("Audio File Path: " + AudioFilePath + AudioFileName);
             Url = NSUrl.FromFilename(AudioFilePath + AudioFileName + ".wav");
 
             //set up the NSObject Array of values that will be combined with the keys to make the NSDictionary

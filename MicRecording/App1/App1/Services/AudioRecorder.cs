@@ -9,5 +9,4 @@ namespace App1.Services
         string AudioFileName { get; set; }
         string AudioFilePath { get; set; }
     }
-
 }

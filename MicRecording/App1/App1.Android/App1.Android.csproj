@@ -112,8 +112,9 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AndroidAudioPlayer.cs" />
-    <Compile Include="Services\AndroidAudioRecorder.cs" />
+    <Compile Include="Services\CAudioPlayer.cs" />
+    <Compile Include="Services\CAudioRecorder.cs" />
+    <Compile Include="Services\CIFile.cs" />
     <Compile Include="Services\CMicRecording.cs" />
     <Compile Include="Services\CVoiceRecorder.cs" />
   </ItemGroup>

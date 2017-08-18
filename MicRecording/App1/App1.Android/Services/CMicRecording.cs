@@ -1,9 +1,9 @@
 ﻿using System;
 using Xamarin.Forms;
-using App1.Droid.Services;
-using App1.Services;
 using Android.Media;
 using System.IO;
+using App1.Droid.Services;
+using App1.Services;
 
 [assembly: Dependency(typeof(CMicRecording))]
 namespace App1.Droid.Services

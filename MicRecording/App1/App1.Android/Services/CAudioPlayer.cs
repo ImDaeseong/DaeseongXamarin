@@ -1,22 +1,23 @@
-﻿using Xamarin.Forms;
+﻿using Android.Media;
+using System.IO;
+using Xamarin.Forms;
 using App1.Droid.Services;
 using App1.Services;
-using Android.Media;
-using System.IO;
 
-[assembly: Dependency(typeof(AndroidAudioPlayer))]
+[assembly: Dependency(typeof(CAudioPlayer))]
 namespace App1.Droid.Services
-{
-    public class AndroidAudioPlayer : AudioPlayer
+{    
+    public class CAudioPlayer : AudioPlayer
     {
         public MediaPlayer Player { get; set; }
-        public AndroidAudioPlayer()
+        public CAudioPlayer()
         {
             Player = new MediaPlayer();
 
-            AudioFilePath = Path.GetTempPath();
+            AudioFilePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            //AudioFilePath = Path.GetTempPath();
         }
-        
+
         public void PlayAudio()
         {
             Player.Completion += (sender, e) => {
@@ -28,7 +29,7 @@ namespace App1.Droid.Services
         }
 
         public void StopAudio()
-        {
+        {            
             Player.Stop();
         }
 
@@ -36,7 +37,7 @@ namespace App1.Droid.Services
         {
             Player.Pause();
         }
-
+     
         private string audioFileName;
         public string AudioFileName
         {
@@ -62,6 +63,22 @@ namespace App1.Droid.Services
                 audioFilePath = value;
             }
         }
-        
+
+        public double Duration
+        {
+            get { return Player == null ? 0 : ((double)Player.Duration) / 1000.0; }
+        }
+
+        public double CurrentPosition
+        {
+            get { return Player == null ? 0 : ((double)Player.CurrentPosition) / 1000.0; }
+        }
+
+        public bool IsPlaying
+        {
+            get { return Player == null ? false : Player.IsPlaying; }
+        }
+
     }
+
 }

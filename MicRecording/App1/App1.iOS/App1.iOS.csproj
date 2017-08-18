@@ -90,10 +90,11 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\CAudioPlayer.cs" />
+    <Compile Include="Services\CAudioRecorder.cs" />
+    <Compile Include="Services\CIFile.cs" />
     <Compile Include="Services\CMicRecording.cs" />
     <Compile Include="Services\CVoiceRecorder.cs" />
-    <Compile Include="Services\iOSAudioPlayer.cs" />
-    <Compile Include="Services\iOSAudioRecorder.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />

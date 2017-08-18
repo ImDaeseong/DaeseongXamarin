@@ -11,7 +11,6 @@ namespace App1.Services
         void StartRecording();
         void StopRecording();
         void PlayRecording();
-
         string GetPlayPath();
     }
 }

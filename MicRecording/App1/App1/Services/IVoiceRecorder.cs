@@ -7,7 +7,6 @@ namespace App1.Services
         bool Record();
         void Play(string path);
         void StopRecord();
-
         string GetPlayPath();
     }
 }

@@ -1,22 +1,24 @@
-﻿using Xamarin.Forms;
+﻿using Android.Media;
+using System.IO;
+using Xamarin.Forms;
 using App1.Droid.Services;
 using App1.Services;
-using Android.Media;
-using System.IO;
 
-[assembly: Dependency(typeof(AndroidAudioRecorder))]
+[assembly: Dependency(typeof(CAudioRecorder))]
 namespace App1.Droid.Services
-{
-    public class AndroidAudioRecorder : AudioRecorder
+{   
+    public class CAudioRecorder : AudioRecorder
     {
         public MediaRecorder Recorder { get; set; }
-        public AndroidAudioRecorder()
+
+        public CAudioRecorder()
         {
             Recorder = new MediaRecorder();
 
-            AudioFilePath = Path.GetTempPath();
+            AudioFilePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            //AudioFilePath = Path.GetTempPath();
         }
-                
+
         public void StartRecord()
         {
             Recorder.SetAudioSource(AudioSource.Mic);
@@ -58,6 +60,6 @@ namespace App1.Droid.Services
                 audioFilePath = value;
             }
         }
-        
+
     }
 }

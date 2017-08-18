@@ -9,5 +9,8 @@ namespace App1.Services
         void PauseAudio();
         string AudioFileName { get; set; }
         string AudioFilePath { get; set; }
+        double Duration { get; }
+        double CurrentPosition { get; }
+        bool IsPlaying { get; }
     }
 }

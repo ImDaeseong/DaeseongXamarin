@@ -10,21 +10,21 @@ namespace App1
 {
     public partial class App : Application
     {
-        public static AudioRecorder AudioRecorder { get; set; }
-        public static AudioPlayer AudioPlayer { get; set; }
-
-
-
+        //public static AudioRecorder AudioRecorder { get; set; }
+        //public static AudioPlayer AudioPlayer { get; set; }
+                
         public App()
         {
             InitializeComponent();
 
             //MainPage = new App1.MainPage();
 
-            //MainPage = new App1.Page1();
 
-            AudioRecorder = DependencyService.Get<AudioRecorder>();
-            AudioPlayer = DependencyService.Get<AudioPlayer>();
+            //AudioRecorder = DependencyService.Get<AudioRecorder>();
+            //AudioPlayer = DependencyService.Get<AudioPlayer>();
+            //MainPage = new App1.Page1();
+            
+
             MainPage = new App1.Page2();
         }
 

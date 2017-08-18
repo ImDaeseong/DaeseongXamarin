@@ -1,22 +1,24 @@
-﻿using Xamarin.Forms;
-using App1.iOS.Services;
-using App1.Services;
+﻿using System;
 using AVFoundation;
 using Foundation;
 using System.IO;
+using Xamarin.Forms;
+using App1.iOS.Services;
+using App1.Services;
 
-[assembly: Dependency(typeof(iOSAudioPlayer))]
+[assembly: Dependency(typeof(CAudioPlayer))]
 namespace App1.iOS.Services
 {
-    public class iOSAudioPlayer : AudioPlayer
+    public class CAudioPlayer : AudioPlayer
     {
         public AVAudioPlayer Player { get; set; }
         public NSError Error;
-        public iOSAudioPlayer()
+        public CAudioPlayer()
         {
-            AudioFilePath = Path.GetTempPath();
+            //AudioFilePath = Path.GetTempPath();
+            AudioFilePath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
         }
-        
+
         void AudioPlayer.PlayAudio()
         {
             Player = new AVAudioPlayer(NSUrl.FromFilename(Path.Combine(AudioFilePath, AudioFileName + ".wav")), ".wav", out Error);
@@ -32,7 +34,7 @@ namespace App1.iOS.Services
         {
             Player.Pause();
         }
-
+              
         private string audioFileName;
         public string AudioFileName
         {
@@ -58,7 +60,22 @@ namespace App1.iOS.Services
                 audioFilePath = value;
             }
         }
-        
+
+        public double Duration
+        {
+            get { return Player == null ? 0 : Player.Duration; }
+        }
+
+        public double CurrentPosition
+        {
+            get { return Player == null ? 0 : Player.CurrentTime; }
+        }
+
+        public bool IsPlaying
+        {
+            get { return Player == null ? false : Player.Playing; }
+        }
+
     }
 
 }

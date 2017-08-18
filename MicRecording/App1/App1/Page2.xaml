@@ -4,10 +4,26 @@
              x:Class="App1.Page2">
     <ContentPage.Content>
 
-        <StackLayout>
-            <Button Text="start record" x:Name="start" Clicked="start_Clicked" />
-            <Button Text="Stop record" x:Name="Stop" Clicked="Stop_Clicked" />
+        <StackLayout Orientation="Vertical" Margin="15,15,15,15">
+
+            <Frame x:Name="frameRecord" Padding="0" CornerRadius="3" BackgroundColor="#D7D7D9" OutlineColor="White" HasShadow="False" IsVisible="True">
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btnRecord" BackgroundColor="Gray" Text="녹음" VerticalOptions="Center" HorizontalOptions="Start" Clicked="btnRecord_Clicked" />
+                    <Label  x:Name="lblRecord" TextColor="Orange" VerticalOptions="Center" FontSize="15" FontAttributes="Bold" Text="버튼을 클릭하면 녹음이 시작됩니다." />
+                </StackLayout>
+            </Frame>
+
+            <Frame x:Name="framePlay" CornerRadius="3" BackgroundColor="#D7D7D9" OutlineColor="White" HasShadow="False" IsVisible="True">
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btnPlay" BackgroundColor="Gray" Text="미리듣기" VerticalOptions="Center" HorizontalOptions="Start" Clicked="btnPlay_Clicked"/>
+                    <Label FontSize="Micro" TextColor="Orange" Text="00:00" VerticalOptions="Center" x:Name="currentTime" />
+                    <ProgressBar x:Name="progress" Progress="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                    <Label FontSize="Micro" TextColor="Orange" Text="00:00" VerticalOptions="Center" x:Name="totalTime" />
+                </StackLayout>
+            </Frame>
+            
         </StackLayout>
+        
         
     </ContentPage.Content>
 </ContentPage>

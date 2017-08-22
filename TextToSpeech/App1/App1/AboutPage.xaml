@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderers ="clr-namespace:App1.Renderers"
+             x:Class="App1.AboutPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0, 20, 0, 0" />
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+            <Label Text="Application" TextColor="White" XAlign="Center" FontSize="25.0" VerticalOptions="Center" />
+            <Label Text="Version: 1.0.0" TextColor="White" XAlign="Center" FontSize="15.0" VerticalOptions="Center" />
+            <renderers:CustomLabel Text="www.naver.com" TextColor="Black" IsUnderlined="true" XAlign="Center" FontSize="15.0" BackgroundColor="Transparent">
+                <renderers:CustomLabel.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnFollowLinkClicked" />
+                </renderers:CustomLabel.GestureRecognizers>
+            </renderers:CustomLabel>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

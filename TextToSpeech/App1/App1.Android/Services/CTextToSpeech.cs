@@ -7,42 +7,102 @@ using Java.Util;
 
 [assembly: Dependency(typeof(CTextToSpeech))]
 namespace App1.Droid.Services
-{   
+{
     public class CTextToSpeech : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
         private TextToSpeech speaker;
         private Locale language = Locale.Korean;
-        private string sToSpeak;
 
-        public CTextToSpeech() { }
+        public bool IsInitialized { get; private set; }
+        public bool IsSpeaking { get; private set; }
 
-        public void Speak(string sText)
+        public CTextToSpeech()
         {
-            var ctx = Forms.Context; // useful for many Android SDK features
-            sToSpeak = sText;
+            speaker = new TextToSpeech(Forms.Context.ApplicationContext, this);
+        }
+
+
+        public void Speak(string sText, double pitch, double speed)
+        {
+            if (this.IsSpeaking || !this.IsInitialized)
+                return;
+
+            this.IsSpeaking = true;
+            try
+            {
+                this.speaker.SetLanguage(language);
+                
+                this.speaker.SetPitch((float)pitch);
+                this.speaker.SetSpeechRate((float)speed);
+
+                this.speaker.Speak(sText, QueueMode.Flush, null, null);
+            }
+            finally
+            {
+                this.IsSpeaking = false;
+            }
+        }
+
+        public void Stop()
+        {
+            if (!this.IsSpeaking) return;
+
+            try
+            {
+                this.speaker.Stop();
+            }
+            finally
+            {
+                this.IsSpeaking = false;
+            }
+        }
+
+        public void SetLanguage(string sLanguage)
+        {
+            switch (sLanguage)
+            {
+                case "Japanese":
+                    this.language = Locale.Japanese;
+                    break;
+
+                case "Korean":
+                    this.language = Locale.Korean;
+                    break;
+
+                default:
+                    this.language = Locale.Us;
+                    break;
+            }
+        }
+
+        public void OnInit(OperationResult status)
+        {
+            this.IsInitialized = (status == OperationResult.Success);
+        }
+    }
+
+
+
+    /*
+    class TextSpeechService : Java.Lang.Object, ITextSpeechService, TextToSpeech.IOnInitListener
+    {
+        protected static System.Random rnd = new System.Random(Guid.NewGuid().GetHashCode());
+        TextToSpeech speaker;
+        private Locale language = Locale.Korean;
+
+        public void Speak(string text)
+        {
+            var ctx = Forms.Context;
+
             if (speaker == null)
             {
                 speaker = new TextToSpeech(ctx, this);
-                //speaker.SetLanguage(language);
+                speaker.SetLanguage(language);
             }
             else
             {
                 speaker.SetLanguage(language);
-
-                if (Build.VERSION.Release.StartsWith("4"))
-                {
-                    speaker.Speak(sToSpeak, QueueMode.Flush, null);
-                }
-                else
-                {
-                    speaker.Speak(sToSpeak, QueueMode.Flush, null, null);
-                }
-
-                /*
-                var p = new Dictionary<string, string>();
-                speaker.SetLanguage(language);
-                speaker.Speak(sToSpeak, QueueMode.Flush, p);
-                */
+                speaker.Speak(text, QueueMode.Flush, null, rnd.Next().ToString());
             }
         }
 
@@ -68,21 +128,9 @@ namespace App1.Droid.Services
         {
             if (status.Equals(OperationResult.Success))
             {
-                if (Build.VERSION.Release.StartsWith("4"))
-                {
-                    speaker.Speak(sToSpeak, QueueMode.Flush, null);
-                }
-                else
-                {
-                    speaker.Speak(sToSpeak, QueueMode.Flush, null, null);
-                }
-
-                /*
-                var p = new Dictionary<string, string>();
-                speaker.Speak(sToSpeak, QueueMode.Flush, p);
-                */
+                speaker.Speak("", QueueMode.Flush, null, rnd.Next().ToString());
             }
         }
-
     }
+    */
 }

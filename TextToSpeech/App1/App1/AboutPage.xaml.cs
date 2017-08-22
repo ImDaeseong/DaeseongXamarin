@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace App1
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AboutPage : ContentPage
+    {
+        public AboutPage()
+        {
+            InitializeComponent();
+        }
+
+        public void OnFollowLinkClicked(object sender, EventArgs e)
+        {
+            Label linkLabel = sender as Label;
+            try
+            {
+                Device.OpenUri(new Uri("http://" + linkLabel.Text));
+            }
+            catch
+            {                
+            }
+        }
+    }
+}

@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="Ds.id.Omong" android:versionCode="2" android:versionName="1.0.0.2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="Ds.id.Omong" android:versionCode="5" android:versionName="1.0.0.5">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="혼자 말하기"></application>
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+	<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+	<application android:label="혼자 말하기" android:icon="@drawable/icon"></application>
 </manifest>

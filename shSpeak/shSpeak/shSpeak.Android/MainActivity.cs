@@ -13,6 +13,8 @@ using Android.Provider;
 using Android.Database;
 using Java.Util.Regex;
 
+using Android.Preferences;
+
 
 namespace shSpeak.Droid
 {
@@ -29,29 +31,40 @@ namespace shSpeak.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
 
-            //AddShortcut();
+            //RemoveShortcut();
+
+            AddShortcut();
         }
 
         private void AddShortcut()
-        {
-            var shortcutIntent = new Intent(this, typeof(MainActivity));
-            shortcutIntent.SetAction(Intent.ActionMain);
+        {            
+            ISharedPreferences sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
+            var IsShortCut = sharedPreferences.GetBoolean("IsShortCut", false);
+            if (!IsShortCut)
+            {
+                var shortcutIntent = new Intent(this, typeof(SplashActivity));
+                shortcutIntent.SetAction(Intent.ActionMain);
 
-            var iconResource = Intent.ShortcutIconResource.FromContext(
-                this, Resource.Drawable.icon);
+                var iconResource = Intent.ShortcutIconResource.FromContext(this, Resource.Drawable.icon);
 
-            var intent = new Intent();
-            intent.PutExtra(Intent.ExtraShortcutIntent, shortcutIntent);
-            intent.PutExtra(Intent.ExtraShortcutName, "혼자 말하기");
-            intent.PutExtra(Intent.ExtraShortcutIconResource, iconResource);
-            intent.SetAction("com.android.launcher.action.INSTALL_SHORTCUT");
-            intent.PutExtra("duplicate", false);
-            SendBroadcast(intent);                        
+                var intent = new Intent();
+                intent.PutExtra(Intent.ExtraShortcutIntent, shortcutIntent);
+                intent.PutExtra(Intent.ExtraShortcutName, "혼자 말하기");
+                intent.PutExtra(Intent.ExtraShortcutIconResource, iconResource);
+                intent.SetAction("com.android.launcher.action.INSTALL_SHORTCUT");
+                intent.PutExtra("duplicate", false);
+                SendBroadcast(intent);
+
+                //업데이트 설정
+                ISharedPreferencesEditor editor = sharedPreferences.Edit();
+                editor.PutBoolean("IsShortCut", true);
+                editor.Apply();
+            }                  
         }
-
+               
         private void RemoveShortcut()
         {
-            var shortcutIntent = new Intent(this, typeof(MainActivity));
+            var shortcutIntent = new Intent(this, typeof(SplashActivity));
             shortcutIntent.SetAction(Intent.ActionMain);
 
             var intent = new Intent();

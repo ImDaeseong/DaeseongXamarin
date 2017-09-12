@@ -6,6 +6,8 @@
 
     <StackLayout>
         <Button x:Name="btnok" Text="ok" Clicked="btnok_Clicked" />
+        <Button x:Name="btnLoadingPopup" Text="LoadingPopup" Clicked="btnLoadingPopup_Clicked" />
+        <Button x:Name="btnMessagePopupShow" Text="MessagePopupShow" Clicked="btnMessagePopupShow_Clicked" />
     </StackLayout>
 
 </ContentPage>

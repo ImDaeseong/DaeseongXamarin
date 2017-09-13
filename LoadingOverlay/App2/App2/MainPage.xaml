@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage">
+
+    <StackLayout x:Name="MyStack" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="10">
+
+        <Label Text="popup test" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Yellow" />
+        <Image Source="icon.png" Aspect="AspectFit" />
+
+        <Frame BackgroundColor="Red" OutlineColor="Aqua" HasShadow="True" CornerRadius="10" HeightRequest="100" WidthRequest="100" />
+
+        <Button  Text="show popup" Clicked="Button_Clicked" />
+        <Button  Text="Hide popup" Clicked="Button1_Clicked" />
+        
+        <Button  Text="OverlayDependency" Clicked="OverlayDependency_Clicked" />
+
+        <Button  Text="LoadingOverlay" Clicked="LoadingOverlay_Clicked" />
+        
+    </StackLayout>
+
+
+</ContentPage>

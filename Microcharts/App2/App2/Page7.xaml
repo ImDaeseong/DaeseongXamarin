@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:micro = "clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="App2.Page7">
+    
+    <ContentPage.Content>
+    
+        <ScrollView Orientation="Vertical">
+            <StackLayout VerticalOptions="Center" Margin="5,5,5,5">
+
+                <micro:ChartView x:Name="chart1" HeightRequest="300"/>
+
+                <BoxView Color="Beige" 
+                     HeightRequest="10" 
+                     WidthRequest="500" 
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"/>
+
+                <micro:ChartView x:Name="chart2" HeightRequest="300"/>
+
+                <BoxView Color="Beige" 
+                     HeightRequest="10" 
+                     WidthRequest="500" 
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"/>
+
+                <micro:ChartView x:Name="chart3" HeightRequest="300"/>
+
+                <BoxView Color="Beige" 
+                     HeightRequest="10" 
+                     WidthRequest="500" 
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"/>
+
+                <micro:ChartView x:Name="chart4" HeightRequest="300"/>
+
+                <BoxView Color="Beige" 
+                     HeightRequest="10" 
+                     WidthRequest="500" 
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"/>
+
+                <micro:ChartView x:Name="chart5" HeightRequest="300"/>
+
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

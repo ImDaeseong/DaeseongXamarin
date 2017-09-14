@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage">
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Margin="5,5,5,5">
+        <Button Text="RadialGaugeChart" Clicked="page1Button_Clicked" />
+        <Button Text="BarChart" Clicked="page2Button_Clicked" />
+        <Button Text="DonutChart" Clicked="page3Button_Clicked" />
+        <Button Text="PointChart" Clicked="page4Button_Clicked" />
+        <Button Text="LineChart" Clicked="page5Button_Clicked" />
+        <Button Text="RadarChart" Clicked="page6Button_Clicked" />
+        <Button Text="All Chart" Clicked="page7Button_Clicked" />
+    </StackLayout>
+
+</ContentPage>

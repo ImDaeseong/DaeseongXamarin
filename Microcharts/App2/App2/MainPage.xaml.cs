@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+//한글 지원이 않되네....
+
 namespace App2
 {
     public partial class MainPage : ContentPage

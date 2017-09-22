@@ -32,8 +32,7 @@ namespace shSpeak.Droid
             LoadApplication(new App());
 
             //RemoveShortcut();
-
-            AddShortcut();
+            //AddShortcut();
         }
 
         private void AddShortcut()

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPage"
+             BackgroundColor= "Transparent">
+
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+
+            <StackLayout x:Name="loginScreen" IsVisible="True" Orientation="Vertical" Padding="5">
+                <Label TextColor="Black" Text="웹페이지" HorizontalOptions="StartAndExpand" />
+                <Entry x:Name="addressEntry" TextColor="Black" HorizontalOptions="FillAndExpand"
+                       PlaceholderColor="Black" Keyboard="Url" />
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="searchButton" Text="검색" TextColor="#31415b" />
+                    <Button x:Name="LoadButton" Text="페이지" TextColor="#31415b" />
+                </StackLayout>
+                            
+            </StackLayout>
+            
+            <StackLayout x:Name="loadingScreen" IsVisible="False" Orientation="Vertical">
+                <ActivityIndicator IsRunning="true" x:Name="loadingIndicator"  HorizontalOptions="Center"/>
+                <Label HorizontalOptions="Center"  Text="접속중..."/>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+    
+</ContentPage>

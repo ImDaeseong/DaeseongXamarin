@@ -51,14 +51,17 @@ namespace App1
         {            
             try
             {
+                //clipboard 내용 복사
                 //string sClipboard = App.ClipboardGetText();
-                //await DisplayAlert("err", sClipboard, "OK");
-                
-                await Navigation.PushModalAsync(new AdMobViewPage(sClipboard));
+
+                AdMobViewPage Page = new AdMobViewPage();
+                Page.GetHtml = sClipboard;
+
+                await Navigation.PushModalAsync(Page);
             }
             catch
             {
-                await DisplayAlert("err", "load Page", "OK");
+                await DisplayAlert("CallPage", "CallPage Error", "OK");
             }        
         }
 
@@ -85,6 +88,8 @@ namespace App1
                     
                     string sPlain = htmlTag.ConvertHtmlToPlainText(sHtml);
                     sClipboard = sPlain;
+
+                    //clipboard 복사
                     //App.ClipboardSetText(sPlain);
                     
                     showLoading(false);                

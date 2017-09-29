@@ -21,7 +21,7 @@
         </StackLayout>
 
         <Frame Grid.Row="1" CornerRadius="3" Padding="0" Margin="5,5,5,5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor= "White">
-            <Editor x:Name="resultLabel" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="Black" FontSize="17"  />
+            <Label x:Name="resultLabel" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="Black" FontSize="17"  />
         </Frame>
        
         <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand">

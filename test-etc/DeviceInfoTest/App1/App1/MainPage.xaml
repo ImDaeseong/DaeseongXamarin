@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Click" Clicked="Button_Clicked" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.VersionString - " /><Label x:Name="l1" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.DeviceName - " /><Label x:Name="l2" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.DeviceId - " /><Label x:Name="l3" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.PackageName - " /><Label x:Name="l4" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.AppVersionName - " /><Label x:Name="l5" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.AppVersionCode - " /><Label x:Name="l6" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.FirmwareVersion - " /><Label x:Name="l7" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.HardwareVersion - " /><Label x:Name="l8" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.Manufacturer - " /><Label x:Name="l9" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.ModelName - " /><Label x:Name="l10" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AppInfo.GetId - " /><Label x:Name="l11" />
+            </StackLayout>            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Memory.GetMemory() - " /><Label x:Name="l12" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
